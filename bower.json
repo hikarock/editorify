@@ -1,0 +1,23 @@
+{
+  "name": "editorify",
+  "version": "1.0.0",
+  "authors": [
+    "hikarock <i@hika69.com>"
+  ],
+  "main": "jquery.editorify.min.js",
+  "keywords": [
+    "jQuery",
+    "textarea",
+    "selectionStart",
+    "setSelectionRange"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/hikarock/editorify",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

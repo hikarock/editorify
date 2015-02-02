@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>editorify.js</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<link href="http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Source Code Pro';
+  background-color: #FE5F55;
+  font-size: 18px;
+  color: #fff;
+}
+h1 {
+  font-weight: normal;
+  text-align: center;
+  font-size: 2.0em;
+}
+h2 {
+  font-weight: normal;
+  font-size: 1.0em;
+}
+.editor:focus {
+  outline: none;
+}
+.editor {
+  color: #333;
+  font-size: 1.0em;
+  width: 100%;
+  height: 20em;
+  border: 30px solid #333;
+  padding: 1.0em;
+}
+.buttons {
+  padding: 0;
+}
+.buttons li {
+  padding: 0;
+  display: inline-block;
+  border-radius: 2px;
+  border: 0;
+  margin-bottom: 8px;
+  margin-right: 4px;
+  background-color: #eee;
+}
+.buttons li:hover {
+  background-color: #ccc;
+}
+.buttons li a {
+  color: #333;
+  padding: 4px 12px 4px 12px;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+<h1>editorify <i class="fa fa-heart-o"></i> &lt;textarea&gt;</h1>
+<textarea class="editor">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+</textarea>
+
+<h2>Basic sample</h2>
+
+<ul class="buttons">
+  <li><a href="#" class="btn btn01">insert</a></li>
+  <li><a href="#" class="btn btn02">backspace</a></li>
+  <li><a href="#" class="btn btn03">delete</a></li>
+  <li><a href="#" class="btn btn04">start</a></li>
+  <li><a href="#" class="btn btn05">end</a></li>
+  <li><a href="#" class="btn btn06">bol</a></li>
+  <li><a href="#" class="btn btn07">eol</a></li>
+  <li><a href="#" class="btn btn08">left</a></li>
+  <li><a href="#" class="btn btn09">right</a></li>
+  <li><a href="#" class="btn btn10">select</a></li>
+  <li><a href="#" class="btn btn11">clear</a></li>
+  <li><a href="#" class="btn btn12">cr</a></li>
+</ul>
+
+<h2>Markdown editor sample</h2>
+
+<ul class="buttons">
+  <li><a href="#" class="btn btn21">url</a></li>
+  <li><a href="#" class="btn btn22">list</a></li>
+  <li><a href="#" class="btn btn23">code</a></li>
+</ul>
+
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="src/jquery.editorify.js"></script>
+<script>
+var $editor = $('.editor');
+    crlf = $('#crlf').val();
+
+// basic
+$('.btn01').on('click', function(evt) {
+  evt.preventDefault();
+  $editor.editorify('insert', 'hello world.');
+});
+$('.btn02').on('click', function(evt) {
+  evt.preventDefault();
+  $editor.editorify('backspace', 1);
+});
+$('.btn03').on('click', function(evt) {
+  evt.preventDefault();
+  $editor.editorify('delete', 1);
+});
+$('.btn04').on('click', function(evt) {
+  evt.preventDefault();
+  $editor.editorify('start');
+});
+$('.btn05').on('click', function(evt) {
+  evt.preventDefault();
+  $editor.editorify('end');
+});
+$('.btn06').on('click', function(evt) {
+  evt.preventDefault();
+  $editor.editorify('bol');
+});
+$('.btn07').on('click', function(evt) {
+  evt.preventDefault();
+  $editor.editorify('eol');
+});
+$('.btn08').on('click', function(evt) {
+  evt.preventDefault();
+  $editor.editorify('left');
+});
+$('.btn09').on('click', function(evt) {
+  evt.preventDefault();
+  $editor.editorify('right');
+});
+$('.btn10').on('click', function(evt) {
+  evt.preventDefault();
+  $editor.editorify('select', 6, 10);
+});
+$('.btn11').on('click', function(evt) {
+  evt.preventDefault();
+  $editor.editorify('clear');
+});
+$('.btn12').on('click', function(evt) {
+  evt.preventDefault();
+  $editor.editorify('cr');
+});
+
+// markdown
+$('.btn21').on('click', function(evt) {
+  evt.preventDefault();
+  $editor
+  .editorify('clear')
+  .editorify('insert', '[](http://example.com)')
+  .editorify('start')
+  .editorify('right', 1);
+});
+$('.btn22').on('click', function(evt) {
+  evt.preventDefault();
+  $editor
+  .editorify('clear')
+  .editorify('insert', '* ');
+});
+$('.btn23').on('click', function(evt) {
+  evt.preventDefault();
+  $editor
+  .editorify('clear')
+  .editorify('insert', '``` javascript').editorify('cr')
+  .editorify('insert', 'function foo() {').editorify('cr')
+  .editorify('insert', '  return true;').editorify('cr')
+  .editorify('insert', '}').editorify('cr')
+  .editorify('insert', '```').editorify('cr');
+});
+</script>
+</body>
+</html>
