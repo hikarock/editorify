@@ -15,7 +15,7 @@
 
 ## DEMO
 
-[DEMO]()
+[DEMO](https://dl.dropboxusercontent.com/u/459142/editorify/index.html)
 
 ## Usage
 
