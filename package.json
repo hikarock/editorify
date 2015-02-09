@@ -18,7 +18,7 @@
   "homepage": "https://github.com/hikarock/editorify",
   "devDependencies": {
     "browser-sync": "^2.0.0-rc3",
-    "chai": "^1.10.0",
+    "expect.js": "^0.3.1",
     "gulp": "^3.8.10",
     "gulp-rename": "^1.2.0",
     "gulp-uglify": "^1.1.0",

@@ -1,5 +1,3 @@
-var expect = chai.expect;
-
 describe('editorify', function () {
 
   it('insert', function () {
@@ -8,7 +6,7 @@ describe('editorify', function () {
         text = 'hello world.';
     $editor.editorify('insert', text);
     val = $editor.val();
-    expect(val).to.equal(text);
+    expect(val).to.be(text);
   });
 
   it('backspace 1', function () {
@@ -18,7 +16,7 @@ describe('editorify', function () {
     $editor.get(0).selectionStart = text.length;
     $editor.editorify('backspace', 1);
     val = $editor.val();
-    expect(val).to.equal('hell');
+    expect(val).to.be('hell');
   });
 
   it('backspace 2', function () {
@@ -28,7 +26,7 @@ describe('editorify', function () {
     $editor.get(0).selectionStart = text.length;
     $editor.editorify('backspace', 2);
     val = $editor.val();
-    expect(val).to.equal('hel');
+    expect(val).to.be('hel');
   });
 
   it('delete 1', function () {
@@ -37,7 +35,7 @@ describe('editorify', function () {
     $editor.get(0).selectionStart = 0;
     $editor.editorify('delete', 1);
     val = $editor.val();
-    expect(val).to.equal('ello');
+    expect(val).to.be('ello');
   });
 
   it('delete 2', function () {
@@ -46,7 +44,7 @@ describe('editorify', function () {
     $editor.get(0).selectionStart = 0;
     $editor.editorify('delete', 2);
     val = $editor.val();
-    expect(val).to.equal('llo');
+    expect(val).to.be('llo');
   });
 
   it('start', function () {
@@ -54,7 +52,7 @@ describe('editorify', function () {
         pos = 0;
     $editor.editorify('start');
     pos = $editor.get(0).selectionStart;
-    expect(pos).to.equal(0);
+    expect(pos).to.be(0);
   });
 
   it('end', function () {
@@ -62,7 +60,7 @@ describe('editorify', function () {
         pos = 0;
     $editor.editorify('end');
     pos = $editor.get(0).selectionStart;
-    expect(pos).to.equal(5);
+    expect(pos).to.be(5);
   });
 
   it('bol', function () {
@@ -72,7 +70,7 @@ describe('editorify', function () {
     $editor.get(0).selectionStart = text.length;
     $editor.editorify('bol');
     pos = $editor.get(0).selectionStart;
-    expect(pos).to.equal(6);
+    expect(pos).to.be(6);
   });
 
   it('eol', function () {
@@ -81,7 +79,7 @@ describe('editorify', function () {
     $editor.get(0).selectionStart = 0;
     $editor.editorify('eol');
     pos = $editor.get(0).selectionStart;
-    expect(pos).to.equal(5);
+    expect(pos).to.be(5);
   });
 
   it('left 1', function () {
@@ -90,7 +88,7 @@ describe('editorify', function () {
     $editor.get(0).selectionStart = 5;
     $editor.editorify('left');
     pos = $editor.get(0).selectionStart;
-    expect(pos).to.equal(4);
+    expect(pos).to.be(4);
   });
 
   it('left 2', function () {
@@ -99,7 +97,7 @@ describe('editorify', function () {
     $editor.get(0).selectionStart = 5;
     $editor.editorify('left', 2);
     pos = $editor.get(0).selectionStart;
-    expect(pos).to.equal(3);
+    expect(pos).to.be(3);
   });
 
   it('right 1', function () {
@@ -108,7 +106,7 @@ describe('editorify', function () {
     $editor.get(0).selectionStart = 5;
     $editor.editorify('right');
     pos = $editor.get(0).selectionStart;
-    expect(pos).to.equal(6);
+    expect(pos).to.be(6);
   });
 
   it('right 2', function () {
@@ -117,7 +115,7 @@ describe('editorify', function () {
     $editor.get(0).selectionStart = 5;
     $editor.editorify('right', 2);
     pos = $editor.get(0).selectionStart;
-    expect(pos).to.equal(7);
+    expect(pos).to.be(7);
   });
 
   it('select', function () {
@@ -128,8 +126,8 @@ describe('editorify', function () {
     $editor.editorify('select', 2, 4);
     start = $editor.get(0).selectionStart;
     end = $editor.get(0).selectionEnd;
-    expect(start).to.equal(2);
-    expect(end).to.equal(5);
+    expect(start).to.be(2);
+    expect(end).to.be(5);
   });
 
   it('clear', function () {
@@ -137,7 +135,7 @@ describe('editorify', function () {
         val = '';
     $editor.editorify('clear');
     val = $editor.val();
-    expect(val).to.equal('');
+    expect(val).to.be('');
   });
 
   it('cr', function () {
@@ -146,6 +144,6 @@ describe('editorify', function () {
         cr = $('<textarea>').text('\r\n').val();
     $editor.editorify('cr');
     val = $editor.val();
-    expect(val).to.equal(cr);
+    expect(val).to.be(cr);
   });
 });
