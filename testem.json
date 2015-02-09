@@ -1,0 +1,9 @@
+{
+  "framework": "mocha",
+  "src_files" : [
+    "node_modules/expect.js/index.js",
+    "bower_components/jquery/dist/jquery.js",
+    "src/jquery.editorify.js",
+    "test/spec.js"
+  ]
+}
