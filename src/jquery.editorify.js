@@ -26,7 +26,7 @@
 
   _crlf = $('<textarea>').text('\r\n').val(),
 
-  _opts ,
+  _opts,
 
   methods = {
 
