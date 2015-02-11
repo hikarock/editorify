@@ -1,0 +1,6 @@
+dependencies:
+  pre:
+    - bower install
+test:
+  override:
+    - npm run test_ci
