@@ -1,5 +1,7 @@
 describe('editorify', function () {
 
+  'use strict';
+
   var $editor = $('#editor');
 
   it('insert', function () {
@@ -53,7 +55,7 @@ describe('editorify', function () {
 
   it('start', function () {
     var text = 'hello',
-        val = '', pos;
+        pos = 0;
     $editor.val(text);
     $editor.editorify('start');
     pos = $editor.get(0).selectionStart;
@@ -62,7 +64,6 @@ describe('editorify', function () {
 
   it('end', function () {
     var text = 'hello',
-        val = '',
         pos = 0;
     $editor.val(text);
     $editor.editorify('end');
