@@ -1,0 +1,24 @@
+{
+  "strict": true,
+  "indent": 2,
+  "maxlen": 140,
+  "unused": true,
+  "undef": true,
+  "browser": true,
+  "jquery": true,
+  "node": true,
+  "nonstandard": true,
+  "worker": true,
+  "predef": [
+    "it",
+    "expect",
+    "describe"
+  ],
+  "devel": true,
+  "debug": true,
+  "eqnull": true,
+  "expr": true,
+  "white": false,
+  "boss": true,
+  "maxerr": 200
+}
