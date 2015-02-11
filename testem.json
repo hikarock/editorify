@@ -5,5 +5,6 @@
     "bower_components/jquery/dist/jquery.js",
     "src/jquery.editorify.js",
     "test/spec.js"
-  ]
+  ],
+  "test_page": "test/test.html"
 }

@@ -1,5 +1,5 @@
 /* =====================================
- * editorify v1.0.1
+ * editorify v1.0.2
  * https://github.com/hikarock/editorify
  * =====================================
  * Copyright 2015 hikarock.
@@ -15,12 +15,16 @@
   },
 
   _setCursorPosition = function(el, pos) {
-    el.setSelectionRange(pos, pos);
+    if ($(el).is(':visible')) {
+      el.setSelectionRange(pos, pos);
+    }
     el.focus();
   },
 
   _setSelectionRange = function(el, begin, end) {
-    el.setSelectionRange(begin, end);
+    if ($(el).is(':visible')) {
+      el.setSelectionRange(begin, end);
+    }
     el.focus();
   },
 

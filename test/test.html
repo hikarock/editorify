@@ -7,11 +7,15 @@
 </head>
 <body>
   <div id="mocha"></div>
-  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <textarea id="editor" style="position:absolute;left:-9999px;"></textarea>
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
   <script src="../src/jquery.editorify.js"></script>
   <script src="../node_modules/mocha/mocha.js"></script>
   <script src="../node_modules/expect.js/index.js"></script>
-  <script>mocha.setup('bdd')</script>
+  <script src="/testem.js"></script>
+  <script>
+    mocha.setup('bdd')
+  </script>
   <script src="./spec.js"></script>
   <script>
     mocha.checkLeaks();
