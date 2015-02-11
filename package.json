@@ -3,7 +3,8 @@
   "version": "1.0.1",
   "description": "<textarea>の中をいい感じに操るライブラリ。",
   "scripts": {
-    "test": "testem"
+    "test": "testem",
+    "test_ci": "testem ci"
   },
   "repository": {
     "type": "git",
