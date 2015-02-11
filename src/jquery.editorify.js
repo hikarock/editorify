@@ -1,5 +1,5 @@
 /* =====================================
- * editorify v1.0.2
+ * editorify v1.0.3
  * https://github.com/hikarock/editorify
  * =====================================
  * Copyright 2015 hikarock.
@@ -146,7 +146,7 @@
      */
     select: function (begin, end) {
       return this.each(function () {
-        _setSelectionRange(this, begin, end + 1);
+        _setSelectionRange(this, begin - 1, end + 1);
       });
     },
 
