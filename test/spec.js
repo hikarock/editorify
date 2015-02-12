@@ -280,3 +280,30 @@ describe('array paramater', function () {
     expect(val).to.be('hell0world');
   });
 });
+
+describe('readme', function () {
+  it('README.mdに書いているサンプル1が動作すること', function () {
+    var val = '';
+    $editor.val('')
+    .editorify('clear')
+    .editorify('insert', '[](http://example.com)')
+    .editorify('start')
+    .editorify('right', 1)
+    .editorify('insert', 'Yo');
+    val = $editor.val();
+    expect(val).to.be('[Yo](http://example.com)');
+  });
+
+  it('README.mdに書いているサンプル2が動作すること', function () {
+    var val = '';
+    $editor.val('').editorify([
+      ['clear'],
+      ['insert', '[](http://example.com)'],
+      ['start'],
+      ['right', 1],
+      ['insert', 'Yo']
+    ]);
+    val = $editor.val();
+    expect(val).to.be('[Yo](http://example.com)');
+  });
+});

@@ -25,6 +25,18 @@
 ```
 
 ```javascript
+$('.editor').editorify([
+  ['clear'],
+  ['insert', '[](http://example.com)'],
+  ['start'],
+  ['right', 1],
+  ['insert', 'Yo']
+]); // [Yo](http://example.com)
+```
+
+OR
+
+```javascript
 $('.editor')
   .editorify('clear')
   .editorify('insert', '[](http://example.com)')
