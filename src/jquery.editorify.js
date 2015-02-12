@@ -1,5 +1,5 @@
 /* =====================================
- * editorify v1.0.3
+ * editorify v1.1.0
  * https://github.com/hikarock/editorify
  * =====================================
  * Copyright 2015 hikarock.
