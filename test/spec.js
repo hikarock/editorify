@@ -255,3 +255,15 @@ describe('clear', function () {
   });
 });
 
+describe('array paramater', function () {
+  it('配列を引数にすると順番にtextarea操作が行われること', function () {
+    var val = '';
+    $editor.val('').editorify([
+      ['insert', 'hello world'],
+      ['left', 6],
+      ['delete', 1]
+    ]);
+    val = $editor.val();
+    expect(val).to.be('hell world');
+  });
+});
