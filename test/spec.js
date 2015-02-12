@@ -260,7 +260,7 @@ describe('array paramater', function () {
     var val = '';
     $editor.val('').editorify([
       ['insert', 'hello world'],
-      ['left', 6],
+      ['left', 7],
       ['delete', 1]
     ]);
     val = $editor.val();
