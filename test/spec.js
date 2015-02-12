@@ -266,4 +266,17 @@ describe('array paramater', function () {
     val = $editor.val();
     expect(val).to.be('hell world');
   });
+
+  it('メソッドチェーンと組み合わせてtextarea操作が動作すること', function () {
+    var val = '';
+    $editor.val('').editorify([
+      ['insert', 'hello world'],
+      ['left', 7],
+      ['delete', 1]
+    ])
+    .editorify('insert', '0')
+    .editorify('delete', 1);
+    val = $editor.val();
+    expect(val).to.be('hell0world');
+  });
 });
