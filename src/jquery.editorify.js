@@ -1,5 +1,5 @@
 /* =====================================
- * editorify v1.0.3
+ * editorify v1.1.0
  * https://github.com/hikarock/editorify
  * =====================================
  * Copyright 2015 hikarock.
@@ -174,6 +174,14 @@
   $.fn.editorify = function (methodOrOpts) {
     if (methods[methodOrOpts]) {
       return methods[methodOrOpts].apply(this, Array.prototype.slice.call(arguments, 1));
+    } else if ($.isArray(methodOrOpts)) {
+      var $this, method, params;
+      for (var i = 0, max = methodOrOpts.length; i < max; i++) {
+        method = methodOrOpts[i][0];
+        params = Array.prototype.slice.call(methodOrOpts[i], 1);
+        $this = methods[method].apply(this, params);
+      }
+      return $this;
     } else if (typeof methodOrOpts === 'object' || !methodOrOpts) {
       return methods.init.apply(this, arguments);
     } else {
