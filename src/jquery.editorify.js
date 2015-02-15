@@ -163,10 +163,14 @@
     /*
      * 改行を挿入する。
      */
-    cr: function () {
-      var that = this;
+    cr: function (len) {
+      len = len || 1;
+      var that = this, val = '', i;
+      for (i = 0; i < len; i++) {
+        val += _crlf + '';
+      }
       return this.each(function () {
-        methods.insert.call(that, _crlf);
+        methods.insert.call(that, val);
       });
     }
   };

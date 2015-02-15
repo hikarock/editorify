@@ -245,13 +245,20 @@ describe('clear', function () {
   });
 });
 
-describe('clear', function () {
+describe('cr', function () {
   it('改行が挿入されること', function () {
     var val = '',
         cr = $editor.val('\r\n').val();
     $editor.val('').editorify('cr');
     val = $editor.val();
     expect(val).to.be(cr);
+  });
+  it('引数に3を指定した時3つ改行が挿入されること', function () {
+    var val = '',
+        cr = $editor.val('\r\n').val();
+    $editor.val('').editorify('cr', 3);
+    val = $editor.val();
+    expect(val).to.be(cr + cr + cr);
   });
 });
 
