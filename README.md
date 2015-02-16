@@ -8,6 +8,7 @@
 # editorify
 
 [![](https://circleci.com/gh/hikarock/editorify.svg?style=shield&circle-token=c7c2d74f61100be974f6baae830f4c7395d92490)](https://circleci.com/gh/hikarock/editorify/tree/master)
+[![gratipay](https://img.shields.io/gratipay/hika69.svg)](https://gratipay.com/hika69/)
 
 ## Overview
 
